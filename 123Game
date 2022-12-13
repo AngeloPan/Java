@@ -1,4 +1,4 @@
-"package test;
+package test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,25 +24,25 @@ public class Test {
      }
     }
    }
-  System.out.println(""留下的是所有同事裡面的第"" + (list.get(0) + 1) + ""順位"");
+  System.out.println("留下的是所有同事裡面的第" + (list.get(0) + 1) + "順位");
   } else {
-   System.out.println(""數字需在0~100間"");
+   System.out.println("數字需在0~100間");
   }
  }
 
  public static int getN() {
   int people = 0;
   Scanner sc = new Scanner(System.in);
-  System.out.println(""請輸入人數："");
+  System.out.println("請輸入人數：");
   while (true) {
    String s = sc.nextLine();
    try {
     people = Integer.parseInt(s);
     break;
    } catch (NumberFormatException e) {
-    System.out.println(""輸入錯誤，請重新輸入："");
+    System.out.println("輸入錯誤，請重新輸入：");
    }
   }
   return people;
  }
-}"
+}
