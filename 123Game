@@ -1,0 +1,48 @@
+"package test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Test {
+
+ public static void main(String[] args) {
+  int n = getN();
+  if (n < 101 && n >= 0) {
+   List<Integer> list = new ArrayList<>();
+   for (int i = 1; i <= n; i++) {
+    list.add(i);
+   }
+   int count = 1;
+   while (list.size() > 1) {
+    for (int i = 0; i < list.size(); i++) {
+     count++;
+     if (count == 3) {
+      list.remove(i);
+      i--;
+      count = 0;
+     }
+    }
+   }
+  System.out.println(""留下的是所有同事裡面的第"" + (list.get(0) + 1) + ""順位"");
+  } else {
+   System.out.println(""數字需在0~100間"");
+  }
+ }
+
+ public static int getN() {
+  int people = 0;
+  Scanner sc = new Scanner(System.in);
+  System.out.println(""請輸入人數："");
+  while (true) {
+   String s = sc.nextLine();
+   try {
+    people = Integer.parseInt(s);
+    break;
+   } catch (NumberFormatException e) {
+    System.out.println(""輸入錯誤，請重新輸入："");
+   }
+  }
+  return people;
+ }
+}"
